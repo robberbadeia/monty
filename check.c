@@ -21,7 +21,6 @@ void _check(char *token)
 		{
 			/*print values of stack*/
 			_print_pall(head);
-			continue;
 		}
 		token = strtok(NULL, " \n\t\a\r;:");
 	}
