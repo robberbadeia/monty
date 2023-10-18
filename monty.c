@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	/*Fail to open the file*/
 	if (fd == -1)
 	{
-		printf("USAGE: monty file\n");
+		printf("USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
 	/*Buffer to store tokens*/
