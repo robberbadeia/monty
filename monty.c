@@ -1,9 +1,9 @@
 #include "monty.h"
-stack_t *h = NULL;
-void check_token(char *token)
+stack_t* check_token(char *token)
 {
 	int ispush = 0;
 	unsigned int line = 1;
+	stack_t *h = NULL;
 
 	while (token)
 	{
@@ -37,7 +37,7 @@ void check_token(char *token)
 		line++;
 		token = strtok(NULL, "\n\t\a\r ;:");
 	}
-
+	return (h);
 }
 /**
  *main - Function
@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
 	int fd = 0;
 	char *buf, *token;
 	ssize_t _read;
+	stack_t *h = NULL;
 
 	if (argc != 2)
 	{
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
 	}
 	token = strtok(buf, "\n\t\a\r ;:");
 
-	check_token(token);
+	h = check_token(token);
 
 	free_dlist(&h);
 	free(buf);

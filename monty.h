@@ -47,7 +47,7 @@ void pint(stack_t **h, unsigned int line);
 void pall(stack_t **h, unsigned int line);
 int isnum(const char *n);
 void nop(stack_t **h, unsigned int line);
-void check_token(char *token);
+stack_t* check_token(char *token);
 
 
 /*Functions related to stack nodes*/
