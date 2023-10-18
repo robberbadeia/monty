@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
 	token = strtok(buf, " \n\t\a\r;:");
 	/*check the token and run the approbriate function*/
 	_check(token);
-	free(buf);
-	close(fd);
+
 	return (0);
 }
