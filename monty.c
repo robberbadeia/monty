@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
 	int fd = 0;
 	char *buf, *token;
 	ssize_t _read;
+	int line = 1;
 
 	if (argc != 2)
 	{
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 	/*Fail to open the file*/
 	if (fd == -1)
 	{
-		printf("USAGE: monty file");
+		printf("USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	/*Buffer to store tokens*/
