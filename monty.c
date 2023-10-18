@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 	{
 		free(buf);
 		close(fd);
+		fprintf(stderr, "Error: malloc failed");
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(buf, "\n\t\a\r ;:");
@@ -62,7 +63,7 @@ int main(int argc, char *argv[])
 			else
 			{
 				free_dlist(&h);
-				printf("L%d: unknown instruction %s\n", line, token);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
 				exit(EXIT_FAILURE);
 			}
 		}
