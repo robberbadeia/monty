@@ -37,15 +37,11 @@ int main(int argc, char *argv[])
 		close(fd);
 		exit(EXIT_FAILURE);
 	}
-
 	/*start to tokenize what in the buffer*/
 	token = strtok(buf, " \n\t\a\r;:");
-
 	/*check the token and run the approbriate function*/
 	_check(token);
-
 	free(buf);
 	close(fd);
-
 	return (0);
 }

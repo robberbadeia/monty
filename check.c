@@ -27,7 +27,7 @@ int _check(char *token)
 		token = strtok(NULL, " \n\t\a\r;:");
 	}
 
-	_freelist(head);
+	/*_freelist(head);*/
 
 	return (0);
 }
