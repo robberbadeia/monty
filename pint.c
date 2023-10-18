@@ -9,7 +9,7 @@ void pint(stack_t **h, unsigned int line)
 {
 	if (!h || !*h)
 	{
-		printf("L%u: can't pint, stack empty\n", line);
+		printf(stderr, "L%u: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 
