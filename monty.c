@@ -4,6 +4,7 @@ void check_token(char *token)
 {
 	int ispush = 0;
 	unsigned int line = 1;
+
 	while (token)
 	{
 		if (ispush == 1)
