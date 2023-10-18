@@ -43,5 +43,6 @@ typedef struct instruction_s
 int _check(char *token);
 stack_t *_push(stack_t *head, char *c);
 int _print_pall(stack_t *head);
+void _freelist(stack_t *h);
 
 #endif

@@ -7,6 +7,7 @@
 int _check(char *token)
 {
 	stack_t *head = NULL;
+	int line = 1;
 
 	while (token)
 	{
@@ -22,7 +23,11 @@ int _check(char *token)
 			/*print values of stack*/
 			_print_pall(head);
 		}
+		line++;
 		token = strtok(NULL, " \n\t\a\r;:");
 	}
+
+	_freelist(head);
+
 	return (0);
 }
