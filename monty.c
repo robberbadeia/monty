@@ -43,4 +43,6 @@ int main(int argc, char *argv[])
 
 	/*check the token and run the approbriate function*/
 	_check(token);
+
+	return (0);
 }
