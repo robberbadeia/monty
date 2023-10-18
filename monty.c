@@ -1,10 +1,43 @@
 #include "monty.h"
-stack_t* check_token(char *token)
+/**
+ *main - Function
+ *@argc: input
+ *@argv: input
+ *Return: int
+*/
+int main(int argc, char *argv[])
 {
-	int ispush = 0;
-	unsigned int line = 1;
+	int fd = 0, ispush = 0;
+	char *buf, *token;
+	ssize_t _read;
 	stack_t *h = NULL;
+	unsigned int line = 1;
 
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	buf = malloc(sizeof(char) * 1000);
+	if (!buf)
+	{
+		return (0);
+	}
+	_read = read(fd, buf, 1000);
+	if (_read == -1)
+	{
+		free(buf);
+		close(fd);
+		fprintf(stderr, "Error: malloc failed");
+		exit(EXIT_FAILURE);
+	}
+	token = strtok(buf, "\n\t\a\r ;:");
 	while (token)
 	{
 		if (ispush == 1)
@@ -37,49 +70,6 @@ stack_t* check_token(char *token)
 		line++;
 		token = strtok(NULL, "\n\t\a\r ;:");
 	}
-	return (h);
-}
-/**
- *main - Function
- *@argc: input
- *@argv: input
- *Return: int
-*/
-int main(int argc, char *argv[])
-{
-	int fd = 0;
-	char *buf, *token;
-	ssize_t _read;
-	stack_t *h = NULL;
-
-	if (argc != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd == -1)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
-	buf = malloc(sizeof(char) * 1000);
-	if (!buf)
-	{
-		return (0);
-	}
-	_read = read(fd, buf, 1000);
-	if (_read == -1)
-	{
-		free(buf);
-		close(fd);
-		fprintf(stderr, "Error: malloc failed");
-		exit(EXIT_FAILURE);
-	}
-	token = strtok(buf, "\n\t\a\r ;:");
-
-	h = check_token(token);
-
 	free_dlist(&h);
 	free(buf);
 	close(fd);
