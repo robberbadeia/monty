@@ -7,12 +7,14 @@
 */
 void pop(stack_t **h, unsigned int line)
 {
-	if (h == NULL || *h == NULL)
+	if (!h || !(*h))
 	{
-		printf("L%u: can't pop an empty stack\n", line);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line);
 		free_dlist(h);
 		exit(EXIT_FAILURE);
 	}
 	else
+	{
 		delete_last_node(h);
+	}
 }
