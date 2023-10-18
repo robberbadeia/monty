@@ -4,7 +4,7 @@
  *@token: input
  *Return: None
 */
-void _check(char *token)
+int _check(char *token)
 {
 	stack_t *head = NULL;
 
@@ -24,5 +24,5 @@ void _check(char *token)
 		}
 		token = strtok(NULL, " \n\t\a\r;:");
 	}
-	return ;
+	return (0);
 }

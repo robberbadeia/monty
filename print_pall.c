@@ -1,11 +1,10 @@
 #include "monty.h"
 /**
- *
- *
- *
- *
+ *_print_pall - Function
+ *@head: input
+ *Return: None
 */
-void _print_pall(stack_t *head)
+int _print_pall(stack_t *head)
 {
 	if (!head)
 	{
@@ -17,5 +16,5 @@ void _print_pall(stack_t *head)
 		printf("%d\n", head->n);
 		head = head->next;
 	}
-	return;
+	return (0);
 }

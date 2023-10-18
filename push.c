@@ -2,10 +2,10 @@
 /**
  *_push - Function to push new nod in stack
  *@head: input
- *@n: input
- *Return: 0 on success
+ *@c: input
+ *Return: pointer
 */
-stack_t *_push (stack_t *head, char *c)
+stack_t *_push(stack_t *head, char *c)
 {
 	stack_t *new;
 
