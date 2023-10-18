@@ -10,6 +10,7 @@ void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"pall", pall},
 		{"pint", pint},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i = 0;
