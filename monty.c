@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	/*Fail to open the file*/
 	if (fd == -1)
 	{
-		printf("USAGE: monty file\n");
+		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	/*Buffer to store tokens*/
