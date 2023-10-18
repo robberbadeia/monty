@@ -65,7 +65,6 @@ void free_dlist(stack_t **h)
 {
 	if (!h)
 		return;
-
 	while (*h && (*h)->next)
 	{
 		(*h) = (*h)->next;

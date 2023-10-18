@@ -4,12 +4,11 @@
  *@argc: input
  *@argv: input
  *Return: int
- *
 */
 int main(int argc, char *argv[])
 {
 	int fd = 0, ispush = 0;
-	char *buf, token;
+	char *buf, *token;
 	ssize_t _read;
 	stack_t *h = NULL;
 	unsigned int line = 1;
@@ -73,5 +72,5 @@ int main(int argc, char *argv[])
 	free_dlist(&h);
 	free(buf);
 	close(fd);
-	return(0);
+	return (0);
 }

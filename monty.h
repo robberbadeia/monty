@@ -42,10 +42,9 @@ typedef struct instruction_s
 
 void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
 void push(stack_t **h, unsigned int line, const char *n);
-void pop(stack_t **h, unsigned int line_number);
-void pint(stack_t **h, unsigned int line_number);
-void pall(stack_t **h, unsigned int line_number);
-void nop(stack_t **h, unsigned int line_number);
+void pop(stack_t **h, unsigned int line);
+void pint(stack_t **h, unsigned int line);
+void pall(stack_t **h, unsigned int line);
 int isnum(const char *n);
 
 /*Functions related to stack nodes*/

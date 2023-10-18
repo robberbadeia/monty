@@ -23,7 +23,6 @@ int isnum(const char *n)
  * @line: input
  * @n: input
  * Return: None
- * 
 */
 void push(stack_t **h, unsigned int line, const char *n)
 {
