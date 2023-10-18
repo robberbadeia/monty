@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 	int fd = 0;
 	char *buf, *token;
 	ssize_t _read;
-	int line = 1;
 
 	if (argc != 2)
 	{
