@@ -1,14 +1,14 @@
 #include "monty.h"
 /**
- * _div - Function to sub top two number
+ * _mul - Function to sub top two number
  * @h: input
  * @line: input
  * Return: None
 */
-void _div(stack_t **h, unsigned int line)
+void _mul(stack_t **h, unsigned int line)
 {
 	stack_t *_first, *_second = NULL;
-	int _div = 0;
+	int _mul = 0;
 
 	_first = (*h);
 	_second = (*h)->next;
@@ -17,9 +17,9 @@ void _div(stack_t **h, unsigned int line)
 		fprintf(stderr, "L%u: can't div, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-	_div = _second->n / _first->n;
+	_mul = _second->n * _first->n;
 
-	_second->n = _div;
+	_second->n = _mul;
 	_second->prev = NULL;
 	(*h) = _second;
 
