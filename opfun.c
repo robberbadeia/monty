@@ -14,7 +14,7 @@ void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number)
 		{"swap", swap},
 		{"add", add},
 		{"sub", sub},
-		{"div", div},
+		{"div", _div},
 		{NULL, NULL}
 	};
 	int i = 0;
