@@ -49,6 +49,7 @@ int isnum(const char *n);
 void nop(stack_t **h, unsigned int line);
 void swap(stack_t **h, unsigned int line);
 void add(stack_t **h, unsigned int line);
+void sub(stack_t **h, unsigned int line);
 
 /*Functions related to stack nodes*/
 int add_last_node(stack_t **h, int n);
