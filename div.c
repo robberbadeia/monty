@@ -17,6 +17,11 @@ void _div(stack_t **h, unsigned int line)
 		fprintf(stderr, "L%u: can't div, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
+	if (_first->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line);
+		exit(EXIT_FAILURE);
+	}
 	_div = _second->n / _first->n;
 
 	_second->n = _div;
