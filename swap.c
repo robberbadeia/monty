@@ -16,8 +16,11 @@ void swap(stack_t **h, unsigned int line)
 	}
 	node1 = (*h);
 	node2 = (*h)->next;
+
+	node2->next->prev = node1;
 	node1->next = node2->next;
 	node1->prev = node2;
+
 	node2->next = node1;
 	node2->prev = NULL;
 	(*h) = node2;
